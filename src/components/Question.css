@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap");
+
+body {
+  background-image: url(./wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0; /* Ensure there's no default margin */
+  overflow: hidden; /* Prevent scrollbars from appearing */
+  font-family: "Happy Monkey", system-ui;
+}
+
+.question-container {
+  text-align: center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(153, 161, 37, 0.8); /* Semi-transparent background */
+  max-width: 60%;
+  padding: 30px;
+  margin: 40px auto; /* Center and add margin */
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.question-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3); /* Hover effect */
+}
+
+.question {
+  border-radius: 10px;
+  max-width: 30ch;
+  word-wrap: break-word;
+  color: rgb(50, 50, 50); /* Darker text for readability */
+}
+
+.main-options {
+  font-size: 2em;
+  color: rgb(80, 114, 12);
+  margin-top: 20px; /* Add margin */
+}
+
+.answer-one:hover,
+.answer-two:hover,
+.answer-three:hover,
+.answer-four:hover {
+  color: yellowgreen;
+  cursor: pointer; /* Show pointer on hover */
+  transition: color 0.3s;
+}
+
+.feedback {
+  margin-top: 20px;
+  font-size: 1.2em; /* Slightly larger */
+  font-weight: bold;
+  color: green;
+}
+
+.feedback.wrong {
+  color: red;
+}
+
+.results-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.results-heading {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: rgb(60, 60, 60);
+}
+
+.results-text {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+/* Success card styles */
+.success-card {
+  background-color: #fffae5; /* Softer background color */
+  border-radius: 15px;
+  padding: 20px;
+  display: inline-block;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.success-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+.success-card h1 {
+  font-size: 2.2em;
+  color: darkgreen;
+  margin-bottom: 10px;
+}
+
+.success-card p {
+  font-size: 1.5em;
+  color: green;
+}
+
+/* Confetti effect styles */
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+  display: none;
+}
+
+.confetti {
+  position: absolute;
+  width: 12px; /* Slightly larger for better visibility */
+  height: 12px;
+  background-color: rgba(255, 0, 0, 0.7);
+  opacity: 0;
+  animation: confetti-fall 1.5s forwards;
+}
+
+@keyframes confetti-fall {
+  from {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti:nth-child(odd) {
+  background-color: rgba(0, 255, 0, 0.7);
+}
+
+.confetti:nth-child(even) {
+  background-color: rgba(0, 0, 255, 0.7);
+}
