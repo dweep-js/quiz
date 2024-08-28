@@ -2,8 +2,8 @@
 
 body {
   background-image: url(./wallpaper.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: no-repeat;; /* Ensure the background covers the entire viewport */
+  background-position: center; /* Center the background image */
   margin: 0; /* Ensure there's no default margin */
   overflow: hidden; /* Prevent scrollbars from appearing */
   font-family: "Happy Monkey", system-ui;
@@ -141,4 +141,37 @@ body {
 
 .confetti:nth-child(even) {
   background-color: rgba(0, 0, 255, 0.7);
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .question-container {
+    max-width: 90%; /* Increase width on smaller screens */
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .main-options {
+    font-size: 1.5em; /* Reduce font size */
+  }
+
+  .results-heading {
+    font-size: 1.5em;
+  }
+
+  .results-text {
+    font-size: 1em;
+  }
+
+  .success-card {
+    padding: 15px;
+  }
+
+  .success-card h1 {
+    font-size: 1.8em;
+  }
+
+  .success-card p {
+    font-size: 1.2em;
+  }
 }
